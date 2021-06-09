@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import { Button } from '@material-ui/core';
 
 function App() {
   //declaring state with input initialized to empty string
@@ -10,6 +11,7 @@ function App() {
   console.log(messages);
 
   const sendMessage = (e) => {
+    e.preventDefault();
     setMessages([...messages, input]);
     setInput('');
   }
@@ -18,8 +20,10 @@ function App() {
     <div className="App">
       <h1>Messenger Clone</h1>
 
-      <input value={input} onChange={(e) => setInput(e.target.value)} />
-      <button onClick={sendMessage}>Send Message</button>
+      <form>
+        <input value={input} onChange={(e) => setInput(e.target.value)} />
+        <Button variant="outlined" type='submit' onClick={sendMessage}>Send Message</Button>
+      </form>
 
       {
         messages.map(message => {
