@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import { Button, FormControl, Input, InputLabel } from '@material-ui/core';
 import Message from './Message';
@@ -6,21 +6,33 @@ import Message from './Message';
 function App() {
   //declaring state with input initialized to empty string
   const [input, setInput] = useState('');
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState(
+    [
+      { username: 'rahul', text: 'hi everyone!' },
+      { username: 'chetan', text: 'Wassup!' }
+    ]);
+  const [username, setUsername] = useState('');
 
-  console.log(input);
+  useEffect(() => {
+    //if blank inside [], this code runs once when the app component loads.
+    setUsername(prompt('Please enter your Name'));
+  }, []) //condition
+
+  //useEffect ~ variable in terms of React
+  //useEffect ~ run code on a specific condition in React
+  // console.log(input);
   console.log(messages);
 
   const sendMessage = (e) => {
     e.preventDefault();
-    setMessages([...messages, input]);
+    setMessages([...messages, { username: username, text: input }]);
     setInput('');
   }
 
   return (
     <div className="App">
       <h1>Messenger Clone</h1>
-
+      <h2>Hello {username}</h2>
       <form>
         <FormControl>
           <InputLabel>Enter a message...</InputLabel>
@@ -31,7 +43,7 @@ function App() {
 
       {
         messages.map(message => {
-          return <Message text={message} />
+          return <Message username={message.username} text={message.text} />
         })
       }
 
