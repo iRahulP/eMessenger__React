@@ -31,8 +31,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Messenger Clone</h1>
-      <h2>Hello {username}</h2>
+      <h1>Messenger Clone! Powered by Firebase..</h1>
+      <h2>Hello, {username}</h2>
       <form>
         <FormControl>
           <InputLabel>Enter a message...</InputLabel>
@@ -43,7 +43,10 @@ function App() {
 
       {
         messages.map(message => {
-          return <Message username={message.username} text={message.text} />
+          return <Message
+            username={username}
+            message={message}
+          />
         })
       }
 
