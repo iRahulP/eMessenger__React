@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import { Button, FormControl, Input, InputLabel, FormHelperText } from '@material-ui/core';
+import { Button, FormControl, Input, InputLabel } from '@material-ui/core';
 
 function App() {
   //declaring state with input initialized to empty string
@@ -22,12 +22,10 @@ function App() {
 
       <form>
         <FormControl>
-          <InputLabel htmlFor="my-input">Email address</InputLabel>
-          <Input />
-          <FormHelperText>We'll never share your email.</FormHelperText>
+          <InputLabel>Enter a message...</InputLabel>
+          <Input value={input} onChange={(e) => setInput(e.target.value)} />
+          <Button disabled={!input} variant="contained" color="primary" type='submit' onClick={sendMessage}>Send Message</Button>
         </FormControl>
-        <input value={input} onChange={(e) => setInput(e.target.value)} />
-        <Button disabled={!input} variant="contained" color="primary" type='submit' onClick={sendMessage}>Send Message</Button>
       </form>
 
       {
