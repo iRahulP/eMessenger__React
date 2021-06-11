@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import { Button, FormControl, Input, InputLabel } from '@material-ui/core';
+import Message from './Message';
 
 function App() {
   //declaring state with input initialized to empty string
@@ -30,7 +31,7 @@ function App() {
 
       {
         messages.map(message => {
-          return <p>{message}</p>
+          return <Message text={message} />
         })
       }
 
