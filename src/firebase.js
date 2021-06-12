@@ -1,13 +1,13 @@
 import firebase from "firebase";
 
 const firebaseApp = firebase.initializeApp({
-    apiKey: "AIzaSyDxdq6V24OJw9QGz5ssD0ltQUjYHemXgB0",
-    authDomain: "facebook-messenger-clone-4fc4d.firebaseapp.com",
-    projectId: "facebook-messenger-clone-4fc4d",
-    storageBucket: "facebook-messenger-clone-4fc4d.appspot.com",
-    messagingSenderId: "341611078801",
-    appId: "1:341611078801:web:5641c5421e61a7853d8b30",
-    measurementId: "G-F0RS2C7N71"
+    apiKey: "AIzaSyAyvqhDsrI15iWEuufHHJoxisCr6okLcxE",
+    authDomain: "emessenger-6f127.firebaseapp.com",
+    projectId: "emessenger-6f127",
+    storageBucket: "emessenger-6f127.appspot.com",
+    messagingSenderId: "20073360654",
+    appId: "1:20073360654:web:3e30797120ad7ea3a13b5f",
+    measurementId: "G-ZZKPH9F787"
 });
 
 const db = firebaseApp.firestore();

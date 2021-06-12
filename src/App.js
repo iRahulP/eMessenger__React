@@ -2,16 +2,19 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import { Button, FormControl, Input, InputLabel } from '@material-ui/core';
 import Message from './Message';
+import db from './firebase';
 
 function App() {
   //declaring state with input initialized to empty string
   const [input, setInput] = useState('');
-  const [messages, setMessages] = useState(
-    [
-      { username: 'Rahul', text: 'hi everyone!' },
-      { username: 'Chetan', text: 'Wassup!' }
-    ]);
+  const [messages, setMessages] = useState([]);
   const [username, setUsername] = useState('');
+
+  useEffect(() => {
+    db.collection('messages').onSnapshot(snap => {
+      setMessages(snap.docs.map(doc => doc.data()))
+    });
+  }, [])
 
   useEffect(() => {
     //if blank inside [], this code runs once when the app component loads.
@@ -25,7 +28,7 @@ function App() {
 
   const sendMessage = (e) => {
     e.preventDefault();
-    setMessages([...messages, { username: username, text: input }]);
+    setMessages([...messages, { username: username, message: input }]);
     setInput('');
   }
 
