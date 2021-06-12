@@ -8,8 +8,8 @@ function App() {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState(
     [
-      { username: 'rahul', text: 'hi everyone!' },
-      { username: 'chetan', text: 'Wassup!' }
+      { username: 'Rahul', text: 'hi everyone!' },
+      { username: 'Chetan', text: 'Wassup!' }
     ]);
   const [username, setUsername] = useState('');
 
