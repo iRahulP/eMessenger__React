@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import React, { useState , useEffect } from 'react';
 import './App.css';
-import { Button, FormControl, Input, InputLabel } from '@material-ui/core';
 import Message from './Message';
+import { FormControl, Input, InputLabel, Button } from '@material-ui/core';
 import db from './firebase';
-import firebase from "firebase";
+import firebase from 'firebase';
 import FlipMove from 'react-flip-move';
 
 function App() {
@@ -47,8 +47,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Messenger Clone! Powered by Firebase..</h1>
-      <h2>Hello, {username}</h2>
+      <img alt="" src="https://facebookbrand.com/wp-content/uploads/2020/10/Logo_Messenger_NewBlurple-399x399-1.png?w=100&h=100"/>
+      <h1>A Messenger Clone, powered by Firebase!</h1>
+      <h2>Welcome {username}</h2>
       <form>
         <FormControl>
           <InputLabel>Enter a message...</InputLabel>
