@@ -16,7 +16,9 @@ function App() {
     db.collection('messages')
     .orderBy('timestamp','desc')
     .onSnapshot(snap => {
-      setMessages(snap.docs.map(doc => doc.data()))
+      setMessages(snap.docs.map(doc => 
+          ({id: doc.id, message: doc.data()}
+        )))
     });
   }, [])
 
@@ -57,8 +59,9 @@ function App() {
 
       <FlipMove>
       {
-        messages.map(message => {
+        messages.map(({id, message}) => {
           return <Message
+            key={id}
             username={username}
             message={message}
           />
