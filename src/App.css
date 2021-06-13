@@ -49,10 +49,8 @@
 .app__formControl {
   display: flex !important;
   flex-direction: row !important;
-}
-
-.app__input {
-  flex: 1;
+  align-items: center;
+  justify-content: center;
 }
 
 .app_iconButton {
