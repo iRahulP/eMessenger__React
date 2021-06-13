@@ -5,6 +5,8 @@ import { FormControl, Input, InputLabel, Button } from '@material-ui/core';
 import db from './firebase';
 import firebase from 'firebase';
 import FlipMove from 'react-flip-move';
+import SendIcon from '@material-ui/icons/Send';
+import { IconButton } from '@material-ui/core';
 
 function App() {
   //declaring state with input initialized to empty string
@@ -50,11 +52,12 @@ function App() {
       <img alt="" src="https://facebookbrand.com/wp-content/uploads/2020/10/Logo_Messenger_NewBlurple-399x399-1.png?w=100&h=100"/>
       <h1>A Messenger Clone, powered by Firebase!</h1>
       <h2>Welcome {username}</h2>
-      <form>
-        <FormControl>
-          <InputLabel>Enter a message...</InputLabel>
-          <Input value={input} onChange={(e) => setInput(e.target.value)} />
-          <Button disabled={!input} variant="contained" color="primary" type='submit' onClick={sendMessage}>Send Message</Button>
+      <form className="app__form">
+        <FormControl className="app__formControl">
+        <Input className="app__input" placeholder="Enter a Message.." value={input} onChange={event => setInput(event.target.value)}/>
+        <IconButton className="app__iconButton" disabled={!input} variant="contained" color="primary" type='submit' onClick={sendMessage}> 
+        <SendIcon />
+        </IconButton>
         </FormControl>
       </form>
 
