@@ -1,3 +1,6 @@
+![](https://github.com/iRahulP/Messenger__CLONE/workflows/firebase%20hosting/badge.svg)
+
+
 # https://emessenger-6f127.web.app/
 
 A Messenger Clone Powered by Firebase deployed on the above site.
